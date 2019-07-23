@@ -1,8 +1,8 @@
 # Advanced iptables and ip6tables persistent firewall configuration
 
-Check out cryptsus.com for more context.
+Configuration files for Linux kernel iptables firewall. Read [this article] for more information.
 
-Initialize on startup:
+Make the files executable:
 ```bash
 $ chmod +x /sbin/scripts/4iptables.sh 
 $ chmod +x /sbin/scripts/6iptables.sh
@@ -13,7 +13,7 @@ $ bash /sbin/scripts/6iptables.sh
 $ chmod +x /sbin/scripts/iptables4.rules
 $ chmod +x /sbin/scripts/iptables6.rules
 ```
-
+Make iptables configuration persistant on start-up:
 ```bash
 $ vi /etc/network/if-pre-up.d/iptables
 
@@ -21,9 +21,13 @@ $ vi /etc/network/if-pre-up.d/iptables
 /sbin/iptables-restore < /sbin/scripts/iptables4.rules
 /sbin/ip6tables-restore < /sbin/scripts/iptables6.rules
 ```
-
+Make iptables pre-up file executable for startup:
 ```bash
 chmod +x /etc/network/if-pre-up.d/iptables
+```
+Verify and troubelshoot configuration:
+```bash
+iptables -vL
 ```
 
 # License
