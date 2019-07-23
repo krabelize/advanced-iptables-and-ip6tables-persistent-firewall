@@ -1,4 +1,4 @@
-# iptables and ip6tables host-based firewall scripts
+# Advanced iptables and ip6tables persistent firewall configuration
 
 Check out cryptsus.com for more context.
 
