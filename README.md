@@ -23,11 +23,11 @@ $ vi /etc/network/if-pre-up.d/iptables
 ```
 Make iptables pre-up file executable for startup:
 ```bash
-chmod +x /etc/network/if-pre-up.d/iptables
+$ chmod +x /etc/network/if-pre-up.d/iptables
 ```
 Verify and troubelshoot configuration:
 ```bash
-iptables -vL
+$ iptables -vL
 ```
 
 # License
