@@ -1,6 +1,6 @@
 #!/bin/bash
 #By krabelize | cryptsus.com
-#Persistant IPv6 iptables firewall script
+#Persistent IPv6 iptables firewall script
 
 #Reset all IPv6 iptables rules
 ip6tables -F
