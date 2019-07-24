@@ -1,6 +1,6 @@
 # Advanced iptables and ip6tables persistent firewall configuration
 
-Configuration files for Linux kernel iptables firewall. Read [this article] for more information.
+Configuration files for Linux kernel iptables firewall. Read [this article](https://cryptsus.com/blog/advanced-perimeter-based-iptables-firewall-on-linux.html) for more information.
 
 Make the files executable:
 ```bash
@@ -13,7 +13,7 @@ $ bash /sbin/scripts/6iptables.sh
 $ chmod +x /sbin/scripts/iptables4.rules
 $ chmod +x /sbin/scripts/iptables6.rules
 ```
-Make iptables configuration persistant on start-up:
+Make iptables configuration persistent on start-up:
 ```bash
 $ vi /etc/network/if-pre-up.d/iptables
 
