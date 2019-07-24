@@ -1,6 +1,6 @@
 #!/bin/bash
 #By krabelize | cryptsus.com
-#Persistant IPv4 iptables firewall script
+#Persistent IPv4 iptables firewall script
 LOOPBACK="127.0.0.0/8"
 NIC_DATA="eth0"
 NIC_MGMT="eth0"
