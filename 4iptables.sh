@@ -31,8 +31,8 @@ iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
 #INPUT rules   #
 ################
 #Allow incoming OpenVPN connections to this host
-iptables -A INPUT -i $NIC_MGMT -p udp -s 0/0 -d $SERVER_IP_MGMT --sport 32768:65535 --dport 1043 -m state --state NEW,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -o $NIC_MGMT -p udp -s $SERVER_IP_MGMT -d 0/0 --sport 1043 --dport 32768:65535 -m state --state ESTABLISHED -j ACCEPT
+iptables -A INPUT -i $NIC_MGMT -p udp -s 0/0 -d $SERVER_IP_MGMT --sport 32768:65535 --dport 1194 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -o $NIC_MGMT -p udp -s $SERVER_IP_MGMT -d 0/0 --sport 1194 --dport 32768:65535 -m state --state ESTABLISHED -j ACCEPT
 
 #################
 #OUTPUT rules   #
