@@ -4,10 +4,32 @@ Configuration files for Linux kernel iptables firewall. Read [this article](http
 
 Make iptables configuration persistent on start-up:
 ```bash
+$ chmod +x /sbin/scripts/4iptables.sh 
+$ chmod +x /sbin/scripts/6iptables.sh
+
+$ bash /sbin/scripts/4iptables.sh 
+$ bash /sbin/scripts/6iptables.sh
+
+$ chmod +x /sbin/scripts/iptables4.rules
+$ chmod +x /sbin/scripts/iptables6.rules
+```
+
+Make iptables configuration persistent on start-up:
+```bash
+$ vi /etc/network/if-pre-up.d/iptables
+#!/bin/bash
+/sbin/iptables-restore < /sbin/scripts/iptables4.rules
+/sbin/ip6tables-restore < /sbin/scripts/iptables6.rules
+```
+Make iptables pre-up file executable for startup:
+```bash
+$ chmod +x /etc/network/if-pre-up.d/iptables
 $ vi /etc/nftables.conf
 ```
+Verify and troubelshoot configuration:
 Make nftables persistant on boot:
 ```bash
+$ iptables -vL
 $ systemctl enable nftables
 $ systemctl start nftables
 $ systemctl status nftables
